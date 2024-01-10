@@ -1,4 +1,4 @@
-import { Box, useTheme } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react';
 
 type Props = {};
@@ -17,6 +17,7 @@ const gridTemplate = `
 `
 
 const Dashboard = (props: Props) => {
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1200px)")
   const { palette } = useTheme();
   return (
     <Box 

@@ -9,7 +9,7 @@ import Predictions from "@/scenes/predictions";
 
 function App() {
   // State to toggle between 'dark' and 'light'
-  const [mode, setMode] = useState('dark');
+  const [mode, setMode] = useState<'dark' | 'light'>('dark');
 
   // Dynamically create MUI theme
   const theme = useMemo(() => createTheme(getThemeSettings(mode)), [mode]);
@@ -23,10 +23,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        {/* ... Your components here */}
-        <Box width="100%" height="100%" padding="1rem 2rem 4rem 2rem">
-          <button onClick={toggleMode}>Toggle Theme</button> {/* Toggle Button */}
-          <Navbar />
+        <Box width="100%" height="100%" padding="1rem 2rem 4rem 2rem" sx={{ backgroundColor: theme.palette.background.default, transition: 'background-color .4s'}}>
+          <Navbar mode={mode} toggleMode={toggleMode} />
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/predictions" element={<Predictions />} />

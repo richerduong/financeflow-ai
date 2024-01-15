@@ -49,20 +49,16 @@ export const tokens = {
       light: "#ffffff", // Lighter background for light mode
       main: "#f0f0f3",  // Main background for light mode
     },
-    // text: {
-    //   primary: "#1f2026", // Darker text for light mode for better contrast
-    //   secondary: "#6b6d74",
-    // },
     grey: {
-      100: "#f0f0f3",
-      200: "#e1e2e7",
-      300: "#d1d3da",
-      400: "#c2c5ce",
+      900: "#f0f0f3",
+      800: "#e1e2e7",
+      700: "#d1d3da",
+      600: "#c2c5ce",
       500: "#b3b6c2",
-      600: "#8f929b",
-      700: "#6b6d74",
-      800: "#48494e",
-      900: "#242427",
+      400: "#8f929b",
+      300: "#6b6d74",
+      200: "#48494e",
+      100: "#242427",
     },
     primary: {
       // light green
@@ -109,20 +105,16 @@ export const tokens = {
           main: currentTokens.secondary[500],
         },
         tertiary: {
-          ...tokens.tertiary,
+          ...currentTokens.tertiary,
         },
         grey: {
-          ...tokens.grey,
-          main: tokens.grey[500],
+          ...currentTokens.grey,
+          main: currentTokens.grey[500],
         },
         background: {
           default: currentTokens.background.main,
           light: currentTokens.background.light,
         },
-        // text: {
-        //   primary: currentTokens.text.primary,
-        //   secondary: currentTokens.text.secondary,
-        // },
       },
       typography: {
         fontFamily: ["Inter", "sans-serif"].join(","),
@@ -139,25 +131,34 @@ export const tokens = {
           fontFamily: ["Inter", "sans-serif"].join(","),
           fontSize: 20,
           fontWeight: 800,
-          color: tokens.grey[200],
+          color: currentTokens.grey[200],
         },
         h4: {
           fontFamily: ["Inter", "sans-serif"].join(","),
           fontSize: 14,
           fontWeight: 600,
-          color: tokens.grey[300],
+          color: currentTokens.grey[300],
         },
         h5: {
           fontFamily: ["Inter", "sans-serif"].join(","),
           fontSize: 12,
           fontWeight: 400,
-          color: tokens.grey[500],
+          color: currentTokens.grey[500],
         },
         h6: {
           fontFamily: ["Inter", "sans-serif"].join(","),
           fontSize: 10,
-          color: tokens.grey[700],
+          color: currentTokens.grey[700],
         },
       },
-    };
+      components: {
+        MuiTypography: {
+          styleOverrides: {
+            root: {
+              transition: 'color 0.4s', // Apply color transition to all Typography components
+            },
+          },
+        },
+      },
+    }
   };

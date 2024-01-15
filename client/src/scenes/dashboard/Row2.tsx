@@ -39,7 +39,7 @@ const Row2 = () => {
           return {
             name: month.substring(0, 3),
             "Operational Expenses": operationalExpenses,
-            "Non Operational Expenses": nonOperationalExpenses,
+            "Non-Operational Expenses": nonOperationalExpenses,
           };
         }
       )
@@ -52,8 +52,8 @@ const Row2 = () => {
       productData.map(({ _id, price, expense }) => {
         return {
           id: _id,
-          price: price,
-          expense: expense,
+          Price: price,
+          Expense: expense,
         };
       })
     );
@@ -100,7 +100,7 @@ const Row2 = () => {
             <Line
               yAxisId="left"
               type="monotone"
-              dataKey="Non Operational Expenses"
+              dataKey="Non-Operational Expenses"
               stroke={palette.tertiary[500]}
             />
             <Line
@@ -113,7 +113,7 @@ const Row2 = () => {
         </ResponsiveContainer>
       </DashboardBox>
       <DashboardBox gridArea="e">
-        <BoxHeader title="Campaigns and Targets" sideText="+8%" />
+        <BoxHeader title="Campaigns & Targets" sideText="+8%" />
         <FlexBetween mt="0.25rem" gap="1.5rem" pr="1rem">
           <PieChart
             width={110}
@@ -173,8 +173,8 @@ const Row2 = () => {
             <CartesianGrid stroke={palette.grey[800]} />
             <XAxis
               type="number"
-              dataKey="price"
-              name="price"
+              dataKey="Price"
+              name="Price"
               axisLine={false}
               tickLine={false}
               style={{ fontSize: "10px" }}
@@ -182,8 +182,8 @@ const Row2 = () => {
             />
             <YAxis
               type="number"
-              dataKey="expense"
-              name="expense"
+              dataKey="Expense"
+              name="Expense"
               axisLine={false}
               tickLine={false}
               style={{ fontSize: "10px" }}

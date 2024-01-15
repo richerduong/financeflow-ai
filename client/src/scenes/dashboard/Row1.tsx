@@ -5,9 +5,7 @@ import { useTheme } from '@mui/material'
 import { useMemo } from 'react'
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis, Tooltip, LineChart, Legend, Line, BarChart, Bar } from 'recharts'
 
-type Props = {};
-
-const Row1 = (props: Props) => {
+const Row1 = () => {
   const { palette } = useTheme();
   const { data } = useGetKpisQuery();
 
@@ -17,7 +15,7 @@ const Row1 = (props: Props) => {
       data[0].monthlyData.map(({ month, revenue }) => {
         return {
           name: month.substring(0, 3),
-          revenue: revenue,
+          Revenue: revenue,
         };
       })
     );
@@ -29,8 +27,8 @@ const Row1 = (props: Props) => {
       data[0].monthlyData.map(({ month, revenue, expenses }) => {
         return {
           name: month.substring(0, 3),
-          revenue: revenue,
-          expenses: expenses,
+          Revenue: revenue,
+          Expenses: expenses,
         };
       })
     );
@@ -42,8 +40,8 @@ const Row1 = (props: Props) => {
       data[0].monthlyData.map(({ month, revenue, expenses }) => {
         return {
           name: month.substring(0, 3),
-          revenue: revenue,
-          profit: (revenue - expenses).toFixed(2),
+          Revenue: revenue,
+          Profit: (revenue - expenses).toFixed(2),
         };
       })
     );
@@ -98,8 +96,8 @@ const Row1 = (props: Props) => {
             <XAxis dataKey="name" tickLine={false} style={{ fontSize: "10px" }}/>
             <YAxis tickLine={false} axisLine={{ strokeWidth: "0" }} style={{ fontSize: "10px" }} domain={[8000, 23000]}/>
             <Tooltip />
-            <Area type="monotone" dataKey="revenue" dot={true} stroke={palette.primary.main} fillOpacity={1} fill="url(#colorRevenue)" />
-            <Area type="monotone" dataKey="expenses" dot={true} stroke={palette.primary.main} fillOpacity={1} fill="url(#colorExpenses)" />
+            <Area type="monotone" dataKey="Revenue" dot={true} stroke={palette.primary.main} fillOpacity={1} fill="url(#colorRevenue)" />
+            <Area type="monotone" dataKey="Expenses" dot={true} stroke={palette.primary.main} fillOpacity={1} fill="url(#colorExpenses)" />
           </AreaChart>
         </ResponsiveContainer>
       </DashboardBox>
@@ -150,13 +148,13 @@ const Row1 = (props: Props) => {
             <Line
               yAxisId="left"
               type="monotone"
-              dataKey="profit"
+              dataKey="Profit"
               stroke={palette.tertiary[500]}
             />
             <Line
               yAxisId="right"
               type="monotone"
-              dataKey="revenue"
+              dataKey="Revenue"
               stroke={palette.primary.main}
             />
           </LineChart>
@@ -207,7 +205,7 @@ const Row1 = (props: Props) => {
               style={{ fontSize: "10px" }}
             />
             <Tooltip />
-            <Bar dataKey="revenue" fill="url(#colorRevenue)" />
+            <Bar dataKey="Revenue" fill="url(#colorRevenue)" />
           </BarChart>
         </ResponsiveContainer>
       </DashboardBox>

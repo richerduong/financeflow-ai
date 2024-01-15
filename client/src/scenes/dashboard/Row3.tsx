@@ -24,9 +24,10 @@ const Row3 = () => {
       const totalExpenses = kpiData[0].totalExpenses;
       return Object.entries(kpiData[0].expensesByCategory).map(
         ([key, value]) => {
+          const capitalizedName = key.charAt(0).toUpperCase() + key.slice(1);
           return [
             {
-              name: key,
+              name: capitalizedName,
               value: value,
             },
             {
@@ -42,7 +43,7 @@ const Row3 = () => {
   const productColumns = [
     {
       field: "_id",
-      headerName: "id",
+      headerName: "ID",
       flex: 1,
     },
     {
@@ -62,7 +63,7 @@ const Row3 = () => {
   const transactionColumns = [
     {
       field: "_id",
-      headerName: "id",
+      headerName: "ID",
       flex: 1,
     },
     {
@@ -90,7 +91,7 @@ const Row3 = () => {
       <DashboardBox gridArea="g">
         <BoxHeader
           title="List of Products"
-          sideText={`${productData?.length} products`}
+          sideText={`${productData?.length} Products`}
         />
         <Box
           mt="0.5rem"
@@ -124,7 +125,7 @@ const Row3 = () => {
       <DashboardBox gridArea="h">
         <BoxHeader
           title="Recent Orders"
-          sideText={`${transactionData?.length} latest transactions`}
+          sideText={`${transactionData?.length} Latest Transactions`}
         />
         <Box
           mt="1rem"
@@ -156,7 +157,7 @@ const Row3 = () => {
         </Box>
       </DashboardBox>
       <DashboardBox gridArea="i">
-        <BoxHeader title="Expense Breakdown By Category" sideText="+8%" />
+        <BoxHeader title="Expense Breakdown by Category" sideText="+8%" />
         <FlexBetween mt="0.5rem" gap="0.5rem" p="0 1rem" textAlign="center">
           {pieChartData?.map((data, i) => (
             <Box key={`${data[0].name}-${i}`}>
@@ -181,7 +182,7 @@ const Row3 = () => {
       </DashboardBox>
       <DashboardBox gridArea="j">
         <BoxHeader
-          title="Overall Summary and Explanation Data"
+          title="Overall Summary & Explanation Data"
           sideText="+24%"
         />
         <Box

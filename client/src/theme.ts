@@ -43,6 +43,17 @@ export const tokens = {
       main: "#1f2026",
     },
   };
+
+  export const lightTokens = {
+    background: {
+      light: "#ffffff", // Lighter background for light mode
+      main: "#f0f0f3",  // Main background for light mode
+    },
+    text: {
+      primary: "#1f2026", // Darker text for light mode for better contrast
+      secondary: "#6b6d74",
+    },
+  };
   
   // mui theme settings
   export const themeSettings = {

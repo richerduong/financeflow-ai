@@ -1,30 +1,37 @@
-import { Box } from "@mui/material";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { themeSettings } from "./theme";
+import { getThemeSettings } from "./theme";
 import Navbar from "@/scenes/navbar";
 import Dashboard from "@/scenes/dashboard";
 import Predictions from "@/scenes/predictions";
 
 function App() {
-  const theme = useMemo(() => createTheme(themeSettings), []);
+  // State to toggle between 'dark' and 'light'
+  const [mode, setMode] = useState<'dark' | 'light'>('dark');
+
+  // Dynamically create MUI theme
+  const theme = useMemo(() => createTheme(getThemeSettings(mode)), [mode]);
+
+  // Function to toggle the mode
+  const toggleMode = () => {
+    setMode(prevMode => prevMode === 'dark' ? 'light' : 'dark');
+  };
+
   return (
-    <div className="app">
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <BrowserRouter>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Box width="100%" height="100%" padding="1rem 2rem 4rem 2rem">
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/predictions" element={<Predictions />} />
-            </Routes>
-          </Box>
-        </ThemeProvider>
+        <Box width="100%" height="100%" padding="1rem 2rem 4rem 2rem" sx={{ backgroundColor: theme.palette.background.default, transition: 'background-color .4s'}}>
+          <Navbar mode={mode} toggleMode={toggleMode} />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/predictions" element={<Predictions />} />
+          </Routes>
+        </Box>
       </BrowserRouter>
-    </div>
+    </ThemeProvider>
   );
 }
 

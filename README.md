@@ -6,6 +6,7 @@
   <a href="#" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/Imwwyeb.png" alt="Portfolio Screenshot"></a>
 </p>
 -->
+
 ## Technologies Used 🔧
 <div>
   <img src="https://img.shields.io/badge/-JavaScript-161b22?style=for-the-badge&logo=javascript&labelColor=black">
@@ -28,4 +29,5 @@ FinanceFlow AI is an advanced financial analytics platform designed to provide r
 <!--
 Visit the live site to see my work in action: [richerduong.com](https://richerduong.com) <br><br>
 -->
+
 *Created by Richer Duong*

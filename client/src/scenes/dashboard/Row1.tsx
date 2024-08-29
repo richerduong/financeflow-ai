@@ -1,3 +1,4 @@
+// Currently checking if this file is good
 import BoxHeader from '@/components/BoxHeader'
 import DashboardBox from '@/components/DashboardBox'
 import { useGetKpisQuery } from '@/state/api'
@@ -8,6 +9,7 @@ import { Area, AreaChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis, Tool
 const Row1 = () => {
   const { palette } = useTheme();
   const { data } = useGetKpisQuery();
+  console.log("data", data);
 
   const revenue = useMemo(() => {
     return (

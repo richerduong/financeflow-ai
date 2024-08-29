@@ -9,13 +9,11 @@
 
 ## Technologies Used 🔧
 <div>
-  <img src="https://img.shields.io/badge/-JavaScript-161b22?style=for-the-badge&logo=javascript&labelColor=black">
   <img src="https://img.shields.io/badge/-TypeScript-161b22?style=for-the-badge&logo=typescript&labelColor=black">
   <img src="https://img.shields.io/badge/MongoDB-161b22?style=for-the-badge&logo=mongodb&labelColor=black">
   <img src="https://img.shields.io/badge/express.js-161b22?style=for-the-badge&logo=express&logoColor=%2361DAFB&labelColor=black">
   <img src="https://img.shields.io/badge/react-161b22?style=for-the-badge&logo=react&logoColor=%2361DAFB&labelColor=black">
   <img src="https://img.shields.io/badge/node.js-161b22?style=for-the-badge&logo=node.js&labelColor=black">
-  <img src="https://img.shields.io/badge/-CSS-161b22?style=for-the-badge&logo=css3&logoColor=%231572B6&labelColor=black">
 </div>
 
 ## Information ℹ
